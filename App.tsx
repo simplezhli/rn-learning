@@ -5,21 +5,21 @@
  * @format
  * @flow
  */
-
 import React, {Component} from 'react';
 import {
-  Alert,
-  ScrollView,
-  StyleSheet,
-  Button,
-  TextInput,
-  View,
-  Text,
+    Alert,
+    ScrollView,
+    StyleSheet,
+    Button,
+    TextInput,
+    View,
+    Text, Image, TextInputProps, Picker, Slider, FlatList,
 } from 'react-native';
 
 export default class App extends Component {
   state = {
     text: '',
+    language: ""
   };
   _onPressButton() {
     Alert.alert('You tapped the button!');
@@ -46,8 +46,8 @@ export default class App extends Component {
           <View style={{width: 50, height: 50, backgroundColor: 'skyblue'}} />
           <View style={{width: 50, height: 50, backgroundColor: 'steelblue'}} />
         </View>
-        <TextInput
-          style={{height: 50, marginLeft: 20}}
+        <UselessTextInput
+          style={{height: 40, marginLeft: 20, marginRight: 20, borderColor: 'gray', borderWidth: 1, paddingLeft: 10}}
           placeholder="请输入"
           onChangeText={text => this.setState({text})}
           value={this.state.text}
@@ -58,13 +58,54 @@ export default class App extends Component {
               onPress={this._onPressButton}
               title={'Press Me'}
               color={'#841584'}
+              accessibilityLabel="Learn more about this purple button"
             />
           </View>
         </View>
+        <Image
+          style={{width: 50, height: 50, marginLeft: 20}}
+          source={{uri: 'https://facebook.github.io/react-native/img/tiny_logo.png'}}
+        />
+        <Picker
+          selectedValue={this.state.language}
+          style={{height: 50, width: 200}}
+          onValueChange={(itemValue, itemIndex) =>
+            this.setState({language: itemValue})
+          }>
+          <Picker.Item label="Java" value="java" />
+          <Picker.Item label="JavaScript" value="js" />
+        </Picker>
+        <Slider
+          style={{width: 200, height: 40}}
+          minimumValue={0}
+          maximumValue={1}
+          minimumTrackTintColor={'#ff0000'}
+          maximumTrackTintColor={'#000000'}
+        />
+        <FlatList
+          style={{marginLeft: 20}}
+          data={[{key: 'a'}, {key: 'b'}]}
+          renderItem={({item}) =>
+            <Text>{item.key}</Text>
+          }
+        />
       </ScrollView>
     );
   }
 }
+
+function UselessTextInput(props: TextInputProps) {
+  return (
+    <TextInput
+      {...props}
+      maxLength={20}
+      secureTextEntry={true}
+      returnKeyType={'search'}
+      keyboardType={'numeric'}
+    />
+  );
+}
+
 interface IProps {
   name: string;
 }
@@ -77,7 +118,12 @@ class Greeting extends Component<IProps, IState> {
   render() {
     return (
       <View style={{alignItems: 'center', marginTop: 50}}>
-        <Text style={styles.red}>Hello {this.props.name}!</Text>
+        <Text style={styles.red}>
+          Hello
+          <Text style={{fontWeight: 'bold'}}>
+            {this.props.name}!
+          </Text>
+        </Text>
       </View>
     );
   }
