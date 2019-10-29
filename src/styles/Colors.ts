@@ -7,8 +7,8 @@ const darkgrayWithOpacity = 'rgba(68, 68, 68, 0.5)';
 
 export const colors = {
   primary: red,
-  secondary: white,
-  default: black,
+  secondary: black,
+  default: white,
   light: lightgray,
   dark: darkgray,
   darkWithOpacity: darkgrayWithOpacity
