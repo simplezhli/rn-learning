@@ -8,20 +8,79 @@ import TextInputLearning from "../screens/TextInputLearning";
 import TouchableLearning from "../screens/TouchableLearning";
 import ImageLearning from "../screens/ImageLearning";
 import {AsyncStorageLearning} from "../screens/AsyncStorageLearning";
+import {colors} from '../styles/Colors';
+import {CartPage} from '../screens/CartPage';
+import {MenuListDemo} from '../screens/MenuListDemo';
 
 const mainNavigator = createStackNavigator(
   {
-    Main: MainPage,
-    View: ViewLearning,
-    Text: TextLearning,
-    TextInput: TextInputLearning,
-    Touchable: TouchableLearning,
-    Image: ImageLearning,
-    AsyncStorage: AsyncStorageLearning,
+    Main: {
+      screen: MainPage,
+      navigationOptions: {
+        title: '首页',
+      }
+    },
+    View: {
+      screen: ViewLearning,
+      navigationOptions: {
+        title: 'View',
+      }
+    },
+    Text: {
+      screen: TextLearning,
+      navigationOptions: {
+        title: 'Text',
+      }
+    },
+    TextInput: {
+      screen: TextInputLearning,
+      navigationOptions: {
+        title: 'TextInput',
+      }
+    },
+    Touchable: {
+      screen: TouchableLearning,
+      navigationOptions: {
+        title: 'Touchable',
+      }
+    },
+    Image: {
+      screen: ImageLearning,
+      navigationOptions: {
+        title: 'Image',
+      }
+    },
+    AsyncStorage: {
+      screen: AsyncStorageLearning,
+      navigationOptions: {
+        title: 'AsyncStorage',
+      }
+    },
+    CartPage: {
+      screen: CartPage,
+      navigationOptions: {
+        title: '购物车',
+      }
+    },
+    MenuListDemo: {
+      screen: MenuListDemo,
+      navigationOptions: {
+        title: 'MenuListDemo',
+      }
+    },
   },
   {
     initialRouteName: 'Main',
-    headerMode: 'none',
+    headerMode: 'screen',
+    defaultNavigationOptions: {
+      headerStyle: {
+        backgroundColor: colors.primary
+      },
+      headerTintColor: colors.default,
+      headerTitleStyle: {
+        fontWeight: 'bold',
+      },
+    }
   }
 );
 

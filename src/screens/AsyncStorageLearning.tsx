@@ -5,52 +5,14 @@
 import React, {Component} from 'react';
 import {
   AsyncStorage,
-  Image, ScrollView,
+  ImageBackground, ScrollView,
   StyleSheet,
   Text, TouchableOpacity,
   View,
 } from 'react-native';
 import {NavigationStackScreenProps} from "react-navigation-stack";
 
-export class AsyncStorageLearning extends Component {
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>AsyncStorage</Text>
-      </View>
-    );
-  }
-}
-
-// 列表项组件
-interface ItemProps {
-  press: any;
-  url: string;
-  title: string;
-}
-
-class Item extends Component<ItemProps> {
-  render() {
-    return (
-      <View style={styles.item}>
-        <TouchableOpacity onPress={this.props.press}>
-          <Image
-            resizeMode={'contain'}
-            style={styles.img}
-            source={{uri: this.props.url}}>
-            <Text numberOfLines={1} style={styles.item_text}>
-              {this.props.title}
-            </Text>
-          </Image>
-        </TouchableOpacity>
-      </View>
-    );
-  }
-}
-
-//列表组件
-class List extends Component<NavigationStackScreenProps> {
+export class AsyncStorageLearning extends Component<NavigationStackScreenProps> {
   state = {
     count: 0,
   };
@@ -69,13 +31,10 @@ class List extends Component<NavigationStackScreenProps> {
   }
 
   goGouWu(){
-    // this.props.navigation.push({
-    //   component: GouWu,
-    //   title:'购物车'
-    // });
+    this.props.navigation.push('CartPage');
   }
 
-  press(data: any) {
+  press(data: Goods) {
     let count = this.state.count;
     count++;
     // 改变数字状态
@@ -121,8 +80,35 @@ class List extends Component<NavigationStackScreenProps> {
     return (
       <ScrollView style={{marginTop:10}}>
         {list}
-        <Text onPress={this.goGouWu} style={styles.btn}>去结算{str}</Text>
+        <Text onPress={this.goGouWu.bind(this)} style={styles.btn}>去结算{str}</Text>
       </ScrollView>
+    );
+  }
+}
+
+// 列表项组件
+interface ItemProps {
+  press: () => void;
+  url: string;
+  title: string;
+}
+
+class Item extends Component<ItemProps> {
+  render() {
+    return (
+      <TouchableOpacity onPress={this.props.press} style={styles.item}>
+        <View style={{flex: 1}}>
+          <ImageBackground
+            resizeMode={'cover'}
+            style={styles.img}
+            source={{uri: this.props.url}}>
+            <Text numberOfLines={1} style={styles.item_text}>
+              {this.props.title}
+            </Text>
+          </ImageBackground>
+
+        </View>
+      </TouchableOpacity>
     );
   }
 }
@@ -141,9 +127,11 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     marginRight: 5,
-    height: 100,
+    height: 110,
   },
   img: {
+    width: '100%',
+    height: '100%',
     flex: 1,
     backgroundColor: 'transparent'
   },
@@ -152,9 +140,9 @@ const styles = StyleSheet.create({
     opacity: 0.7,
     color: '#fff',
     height: 25,
-    lineHeight: 18,
+    lineHeight: 25,
     textAlign: 'center',
-    marginTop: 74,
+    marginTop: 84,
   },
   btn: {
     backgroundColor: '#ff7200',
@@ -164,84 +152,60 @@ const styles = StyleSheet.create({
     marginLeft: 10,
     marginRight: 10,
     marginTop: 40,
-    lineHeight: 24,
+    lineHeight: 33,
     fontSize: 18,
-  },
-  list_item: {
-    marginRight: 5,
-    marginLeft: 5,
-    padding: 5,
-    borderWidth: 1,
-    height: 30,
-    borderRadius: 3,
-    borderColor: '#ddd',
-  },
-  list_item_desc: {
-    flex: 2,
-    fontSize: 15,
-  },
-  list_item_price: {
-    flex: 1,
-    textAlign: 'center',
-    fontSize: 15,
-  },
-  clear: {
-    marginTop: 10,
-    backgroundColor: '#fff',
-    color: '#000',
-    borderWidth: 1,
-    borderColor: '#ddd',
-    marginLeft: 10,
-    marginRight: 10,
-    lineHeight: 24,
-    height: 33,
-    fontSize: 18,
-    textAlign: 'center',
   }
 });
 
+export interface Goods {
+  id: string;
+  title: string;
+  desc: string;
+  price: number;
+  url: string;
+}
 
-const Model = [
+const Model: Goods[] = [
   {
     id: '1',
     title: '佳沛新西兰进口猕猴桃',
     desc: '12个装',
     price: 99,
-    url: 'http://vczero.github.io/ctrip/guo_1.jpg'
+    url: 'https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1044875965,3822093933&fm=26&gp=0.jpg'
   },
   {
     id:'2',
     title: '墨西哥进口牛油果',
     desc: '6个装',
     price: 59,
-    url: 'http://vczero.github.io/ctrip/guo_2.jpg'
+    url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572413214952&di=dee595030cb4bae998927b2e67790ccd&imgtype=0&src=http%3A%2F%2Fn.sinaimg.cn%2Fedu%2Ftransform%2F20151124%2Fl4l7-fxkwvcp2970110.jpg'
   },
   {
     id:'3',
     title: '美国加州进口车厘子',
     desc: '1000g',
     price: 91.5,
-    url: 'http://vczero.github.io/ctrip/guo_3.jpg'
+    url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572413259704&di=1905fc0dc7328aec99d5987e682968cf&imgtype=0&src=http%3A%2F%2Fd3h1lg3ksw6i6b.cloudfront.net%2Fmedia%2Fimage%2F2018%2F02%2F15%2F974041bca7b64cca9808109dd0975476_shutterstock_231199135%2Bcopy.jpg'
   },
   {
     id:'4',
     title: '新疆特产西梅',
     desc: '1000g',
     price: 69,
-    url: 'http://vczero.github.io/ctrip/guo_4.jpg'
+    url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572413314920&di=e8286c6ccfdb7fd7949eac4c6826a0c3&imgtype=0&src=http%3A%2F%2Faduersite.oss-cn-hangzhou.aliyuncs.com%2F10759%2Fimage%2F20151227%2F20151227173700_8749.jpg'
   },
   {
     id:'5',
     title: '陕西大荔冬枣',
     desc: '2000g',
     price: 59.9,
-    url: 'http://vczero.github.io/ctrip/guo_5.jpg'
+    url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572414501706&di=46643305e6ba5e2c46818ed909140057&imgtype=0&src=http%3A%2F%2Fimage.cnpp.cn%2Fupload%2Fimages%2F20170717%2F1500283200_22346_6.jpg'
   },
   {
     id:'6',
     title: '南非红心西柚',
     desc: '2500g',
     price: 29.9,
-    url: 'http://vczero.github.io/ctrip/guo_6.jpg'
+    url: 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1572413364797&di=57c5d284ce6358ea826a4eafd6d67c08&imgtype=0&src=http%3A%2F%2Fwww.tbw-hufu.com%2FtuhfJDEwLmFsaWNkbi5jb20vaTMvMzA1MzAwNjM3My9UQjJ5MmtndGI4a3B1Rmp5MEZjWFhhVWhwWGFfISEzMDUzMDA2MzczJDk.jpg'
   }
 ];
