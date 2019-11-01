@@ -15,7 +15,7 @@ export class MainPage extends Component<NavigationStackScreenProps> {
         <StatusBar backgroundColor={colors.primary}/>
         <FlatList
           keyExtractor={(item,index) => item + index}
-          data={['View', 'Text', 'TextInput', 'Touchable', 'Image', 'AsyncStorage', 'MenuListDemo']}
+          data={['View', 'Text', 'TextInput', 'Touchable', 'Image', 'AsyncStorage', 'MenuListDemo', 'CalendarDemo', 'SwiperDemo', 'ModalDemo']}
           renderItem={({item}) =>
             <TouchableHighlight
               underlayColor={'#e1f6ff'}

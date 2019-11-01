@@ -17,6 +17,7 @@ export class MenuListDemo extends Component {
 
   render() {
     return (
+      // https://blog.csdn.net/baconcc/article/details/99549081
       <View style={{flex: 1}}>
         <MenuList data={data} nSelected={1} tabSelected={0} click={this.onPress}/>
       </View>

@@ -11,6 +11,9 @@ import {AsyncStorageLearning} from "../screens/AsyncStorageLearning";
 import {colors} from '../styles/Colors';
 import {CartPage} from '../screens/CartPage';
 import {MenuListDemo} from '../screens/MenuListDemo';
+import {CalendarDemo} from '../screens/CalendarDemo';
+import {SwiperDemo} from '../screens/SwiperDemo';
+import {ModalDemo} from '../screens/ModalDemo';
 
 const mainNavigator = createStackNavigator(
   {
@@ -66,6 +69,24 @@ const mainNavigator = createStackNavigator(
       screen: MenuListDemo,
       navigationOptions: {
         title: 'MenuListDemo',
+      }
+    },
+    CalendarDemo: {
+      screen: CalendarDemo,
+      navigationOptions: {
+        title: 'CalendarDemo',
+      }
+    },
+    SwiperDemo: {
+      screen: SwiperDemo,
+      navigationOptions: {
+        title: 'SwiperDemo',
+      }
+    },
+    ModalDemo: {
+      screen: ModalDemo,
+      navigationOptions: {
+        title: 'ModalDemo',
       }
     },
   },
