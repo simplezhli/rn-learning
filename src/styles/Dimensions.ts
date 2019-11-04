@@ -1,5 +1,7 @@
-import { Dimensions } from 'react-native';
+import {Dimensions, PixelRatio} from 'react-native';
 
 const { width, height } = Dimensions.get('window');
 
-export const dimensions = { width, height };
+const pixel = 1 / PixelRatio.get();
+
+export const dimensions = { width, height, pixel};

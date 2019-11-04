@@ -14,13 +14,14 @@ import {MenuListDemo} from '../screens/MenuListDemo';
 import {CalendarDemo} from '../screens/CalendarDemo';
 import {SwiperDemo} from '../screens/SwiperDemo';
 import {ModalDemo} from '../screens/ModalDemo';
+import {AxiosDemo} from '../screens/AxiosDemo';
 
 const mainNavigator = createStackNavigator(
   {
     Main: {
       screen: MainPage,
       navigationOptions: {
-        title: '首页',
+        title: 'RN Learning',
       }
     },
     View: {
@@ -89,6 +90,12 @@ const mainNavigator = createStackNavigator(
         title: 'ModalDemo',
       }
     },
+    AxiosDemo: {
+      screen: AxiosDemo,
+      navigationOptions: {
+        title: 'AxiosDemo',
+      }
+    }
   },
   {
     initialRouteName: 'Main',
