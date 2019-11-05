@@ -103,7 +103,11 @@ export class MenuList extends Component<MenuListProps, MenuListState> {
           leftPanel.push(
             <Text onPress={this.leftPress.bind(this, i, k)}
                   key={data[i].child[k].title}
-                  style={[styles.left_row, style]}>{data[i].child[k].title}</Text>);
+                  // 点击不高亮， ios默认点击高亮
+                  suppressHighlighting={true}
+                  style={[styles.left_row, style]}>
+              {data[i].child[k].title}
+            </Text>);
         }
         break;
       }
@@ -125,7 +129,10 @@ export class MenuList extends Component<MenuListProps, MenuListState> {
               rightPanel.push(
                 <Text onPress={this.props.click.bind(this, data[i].child[k].content[j])}
                       key={data[i].child[k].content[j]}
-                      style={styles.left_row}>{data[i].child[k].content[j]}</Text>);
+                      suppressHighlighting={true}
+                      style={styles.left_row}>
+                  {data[i].child[k].content[j]}
+                </Text>);
             }
             break;
           }

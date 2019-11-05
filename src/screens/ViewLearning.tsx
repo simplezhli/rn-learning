@@ -4,7 +4,7 @@ import {PixelRatio, StyleSheet, Text, View} from "react-native";
 class ViewLearning extends Component {
   render() {
     return (
-      <View style={styles.container}>
+      <View style={styles.container} >
         <View style={[styles.item, styles.center]}>
           <Text style={styles.font}>酒店</Text>
         </View>
