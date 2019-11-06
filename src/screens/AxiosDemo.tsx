@@ -3,13 +3,10 @@
  * @data:     2019-11-04 09:38
  ************************************************************************************************/
 import React, {Component} from 'react';
-import {
-  ScrollView,
-  StyleSheet,
-  Text, TouchableHighlight,
-} from 'react-native';
+import {StyleSheet} from 'react-native';
 import {client} from '../api/Axios';
 import Axios, {AxiosError, Canceler} from 'axios';
+import {Button, Container, Text} from 'native-base';
 
 interface User {
   id: number;
@@ -32,6 +29,7 @@ export class AxiosDemo extends Component {
         cancel = c;
       }))})
       .then((response) => {
+        console.log(response);
         this.setState({
           info: response.data.name
         })
@@ -45,19 +43,19 @@ export class AxiosDemo extends Component {
 
   componentWillUnmount(): void {
     // 取消请求（message 参数是可选的）
-    cancel('Operation canceled by the user.');
+    if (cancel){
+      cancel('Operation canceled by the user.');
+    }
   }
 
   render() {
     return (
-      <ScrollView style={styles.container}>
-        <TouchableHighlight
-          onPress={this.getUser.bind(this)}
-          underlayColor={'#e1f6ff'}>
+      <Container style={styles.container}>
+        <Button success onPress={this.getUser.bind(this)}>
           <Text>点击请求数据</Text>
-        </TouchableHighlight>
+        </Button>
         <Text>{this.state.info.toString()}</Text>
-      </ScrollView>
+      </Container>
     );
   }
 }
@@ -65,5 +63,6 @@ export class AxiosDemo extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    padding: 10
   },
 });

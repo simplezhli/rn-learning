@@ -12,7 +12,7 @@ export class MainPage extends Component<NavigationStackScreenProps> {
   render() {
     return (
       <View>
-        <StatusBar backgroundColor={colors.primary}/>
+        <StatusBar backgroundColor={colors.primary} barStyle="light-content"/>
         <FlatList
           keyExtractor={(item,index) => item + index}
           data={['View', 'Text', 'TextInput', 'Touchable', 'Image', 'AsyncStorage',

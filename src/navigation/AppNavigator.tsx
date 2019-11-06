@@ -15,6 +15,8 @@ import {CalendarDemo} from '../screens/CalendarDemo';
 import {SwiperDemo} from '../screens/SwiperDemo';
 import {ModalDemo} from '../screens/ModalDemo';
 import {AxiosDemo} from '../screens/AxiosDemo';
+import {HeaderProps} from 'react-navigation-stack/src/types';
+import {MyTitle} from '../components/MyTitle';
 
 const mainNavigator = createStackNavigator(
   {
@@ -101,6 +103,7 @@ const mainNavigator = createStackNavigator(
     initialRouteName: 'Main',
     headerMode: 'screen',
     defaultNavigationOptions: {
+      header: (props: HeaderProps) => <MyTitle {...props}/>,
       headerStyle: {
         backgroundColor: colors.primary
       },
