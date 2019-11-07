@@ -4,13 +4,13 @@
  ************************************************************************************************/
 import React, {Component} from 'react';
 import {
-  AsyncStorage,
   ImageBackground, ScrollView,
   StyleSheet,
   Text, TouchableOpacity,
   View,
 } from 'react-native';
 import {NavigationStackScreenProps} from "react-navigation-stack";
+import AsyncStorage from '@react-native-community/async-storage';
 
 export class AsyncStorageLearning extends Component<NavigationStackScreenProps> {
   state = {

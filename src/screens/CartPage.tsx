@@ -3,8 +3,9 @@
  * @data:     2019-10-30 10:04
  ************************************************************************************************/
 import React, {Component} from 'react';
-import {Alert, AsyncStorage, ScrollView, StyleSheet, Text, View} from 'react-native';
+import {Alert, ScrollView, StyleSheet, Text, View} from 'react-native';
 import {Goods} from './AsyncStorageLearning';
+import AsyncStorage from '@react-native-community/async-storage';
 
 interface CartState {
   data: Goods[];
@@ -25,7 +26,7 @@ export class CartPage extends Component<{}, CartState> {
   componentDidMount(): void {
     const _that = this;
     AsyncStorage.getAllKeys().then(keys => {
-      AsyncStorage.multiGet(keys).then(value => {
+      AsyncStorage.multiGet(keys).then((value: [string, any][])  => {
         //得到的结果是二维数组
         //value[i][0]表示我们存储的键，value[i][1]表示我们存储的值
         let arr = [];

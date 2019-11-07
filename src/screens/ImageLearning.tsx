@@ -75,6 +75,7 @@ class MyImage extends Component<MyImageProps> {
               <Text>上一张</Text>
             </View>
           </TouchableOpacity>
+          <View style={{width: 30}}/>
           <TouchableOpacity onPress={this.goNext.bind(this)}>
             <View style={styles.btn}>
               <Text>下一张</Text>
@@ -117,7 +118,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     borderRadius: 3,
-    marginRight: 20
   }
 
 });
