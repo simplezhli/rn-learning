@@ -16,7 +16,7 @@ export class MainPage extends Component<NavigationStackScreenProps> {
         <FlatList
           keyExtractor={(item,index) => item + index}
           data={['View', 'Text', 'TextInput', 'Touchable', 'Image', 'AsyncStorage',
-            'MenuListDemo', 'CalendarDemo', 'SwiperDemo', 'ModalDemo', 'AxiosDemo']}
+            'MenuListDemo', 'CalendarDemo', 'SwiperDemo', 'ModalDemo', 'AxiosDemo', 'ReduxLearning']}
           renderItem={({item}) =>
             <TouchableHighlight
               underlayColor={'#e1f6ff'}
