@@ -21,13 +21,13 @@ class Search extends Component {
     value: ''
   };
 
-  getValue(text: string){
+  getValue(text: string) {
     this.setState({
       show: true,
       value: text
     })
   }
-  hide(val: string){
+  hide(val: string) {
     this.setState({
       show: false,
       value: val
@@ -93,7 +93,7 @@ const styles = StyleSheet.create({
     marginLeft: 5,
     marginRight: 5,
     borderColor: '#ccc',
-    borderRadius: 4,
+    borderRadius: 4
   },
   btn: {
     width: 55,
@@ -102,12 +102,12 @@ const styles = StyleSheet.create({
     backgroundColor: '#23beff',
     height: 45,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   search: {
     color: '#fff',
     fontSize: 15,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   result: {
     marginTop: onePT,
@@ -124,6 +124,6 @@ const styles = StyleSheet.create({
     paddingBottom: 10,
     borderWidth: onePT,
     borderColor: '#ddd',
-    borderTopWidth: 0,
+    borderTopWidth: 0
   }
 });

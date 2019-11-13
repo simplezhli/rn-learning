@@ -66,9 +66,9 @@ export class Calendar extends Component<CalendarProps, CalendarState> {
         week = 7;
       }
       const rowCounts = Math.ceil((counts + week - 1) / 7); //本月行数
-      for (let i = 0; i < rowCounts; i++){
+      for (let i = 0; i < rowCounts; i++) {
         let days = [];
-        for (let j = (i * 7) + 1; j < ((i+1) * 7) + 1; j++){
+        for (let j = (i * 7) + 1; j < ((i+1) * 7) + 1; j++) {
           //根据每个月开始的［星期］往后推
           let dayNum = j - week + 1;
           if(dayNum > 0 && j < counts + week){
@@ -77,15 +77,15 @@ export class Calendar extends Component<CalendarProps, CalendarState> {
             const dateStr = dateObj.getFullYear() + '-' + (dateObj.getMonth() + 1) + '-' + dayNum;
             let grayStyle = {};
             let bk = {};
-            if(dateNow >= new Date(date.getFullYear(), date.getMonth() + n, dayNum + 1)){
+            if (dateNow >= new Date(date.getFullYear(), date.getMonth() + n, dayNum + 1)) {
               grayStyle = {
                 color: '#ccc'
               };
             }
-            if(holiday[dateStr]){
+            if (holiday[dateStr]) {
               dayNum = holiday[dateStr];
             }
-            if(check[dateStr]){
+            if (check[dateStr]) {
               bk = {
                 backgroundColor: '#1EB7FF',
                 width: 46,
@@ -105,7 +105,7 @@ export class Calendar extends Component<CalendarProps, CalendarState> {
                 </View>
               </TouchableHighlight>
             );
-          }else{
+          } else {
             days.push(
               <View style={[styles.flex_1]}>
                 <Text/>
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   flex_1: {
     flex: 1,
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
   calendar_container: {
     backgroundColor: '#fff',
@@ -182,7 +182,7 @@ const styles = StyleSheet.create({
   row_header: {
     backgroundColor: '#F5F5F5',
     borderBottomWidth: 1/PixelRatio.get(),
-    borderBottomColor: '#ccc',
+    borderBottomColor: '#ccc'
   },
   row: {
     flexDirection: 'row',
@@ -191,17 +191,17 @@ const styles = StyleSheet.create({
   month: {
     alignItems: 'center',
     justifyContent: 'center',
-    height: 40,
+    height: 40
   },
   month_text: {
     fontSize: 18,
-    fontWeight: '400',
+    fontWeight: '400'
   },
   week_highlight: {
     color: '#23B8FC'
   },
   cm_bottom: {
     borderBottomWidth: 1/PixelRatio.get(),
-    borderBottomColor: '#ccc',
+    borderBottomColor: '#ccc'
   }
 });

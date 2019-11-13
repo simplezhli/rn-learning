@@ -19,11 +19,13 @@ export const testReducer: Reducer<TestState, TestActions> = (
   switch (action.type) {
     case INCREMENT: {
       return {
+        ...state,
         value: state.value + 1
       }
     }
     case DECREMENT: {
       return {
+        ...state,
         value: state.value - 1
       }
     }

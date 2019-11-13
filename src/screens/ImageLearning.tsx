@@ -44,19 +44,19 @@ class MyImage extends Component<MyImageProps> {
     imgs : this.props.imgs,
     count: 0
   };
-  goNext(){
+  goNext() {
     let count = this.state.count;
     count ++;
-    if(count < imgs.length){
+    if (count < imgs.length) {
       this.setState({
         count: count
       });
     }
   }
-  goPreview(){
+  goPreview() {
     let count = this.state.count;
     count --;
-    if(count >= 0){
+    if (count >= 0) {
       this.setState({
         count: count
       });
@@ -117,7 +117,6 @@ const styles = StyleSheet.create({
     borderColor: '#0089ff',
     justifyContent: 'center',
     alignItems: 'center',
-    borderRadius: 3,
+    borderRadius: 3
   }
-
 });

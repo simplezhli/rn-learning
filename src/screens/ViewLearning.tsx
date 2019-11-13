@@ -42,15 +42,15 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     borderRadius: 5,
     padding: 2,
-    backgroundColor: '#ff0067',
+    backgroundColor: '#ff0067'
   },
   item: {
     flex: 1,
-    height: 80,
+    height: 80
   },
   center: {
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   flex: {
     flex: 1
@@ -58,12 +58,12 @@ const styles = StyleSheet.create({
   font: {
     color: '#fff',
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   lineLeftRight: {
     borderLeftWidth: 1/PixelRatio.get(),
     borderRightWidth: 1/PixelRatio.get(),
-    borderColor: '#fff',
+    borderColor: '#fff'
   },
   lineCenter: {
     borderBottomWidth: 1/PixelRatio.get(),

@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
   },
   point: {
     flex: 1,
-    fontSize: 20,
+    fontSize: 20
   },
   at: {
     color: '#3BC1FF',
@@ -113,11 +113,11 @@ const styles = StyleSheet.create({
     height: 30,
     borderRadius: 3,
     backgroundColor: '#FFBA27',
-    padding: 5,
+    padding: 5
   },
   btn_text: {
     lineHeight: 18,
     textAlign: 'center',
-    color: '#fff',
+    color: '#fff'
   }
 });

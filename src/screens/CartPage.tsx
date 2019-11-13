@@ -44,7 +44,7 @@ export class CartPage extends Component<{}, CartState> {
     });
   }
 
-  clearStorage(){
+  clearStorage() {
     const _that = this;
     AsyncStorage.clear().then((_ => {
       _that.setState({
@@ -59,7 +59,7 @@ export class CartPage extends Component<{}, CartState> {
     let data = this.state.data;
     let price = this.state.price;
     const list = [];
-    for (let i = 0; i < data.length; i++){
+    for (let i = 0; i < data.length; i++) {
       price += data[i].price;
       list.push(
         <View style={[styles.row, styles.list_item]}>
@@ -72,7 +72,7 @@ export class CartPage extends Component<{}, CartState> {
       );
     }
     let str = null;
-    if(price){
+    if (price) {
       str = '，共' + price.toFixed(1) + '元';
     }
     return (
@@ -88,7 +88,7 @@ export class CartPage extends Component<{}, CartState> {
 const styles = StyleSheet.create({
   row: {
     flexDirection: 'row',
-    marginBottom: 10,
+    marginBottom: 10
   },
   list_item: {
     marginRight: 5,
@@ -102,12 +102,12 @@ const styles = StyleSheet.create({
   },
   list_item_desc: {
     flex: 2,
-    fontSize: 15,
+    fontSize: 15
   },
   list_item_price: {
     flex: 1,
     textAlign: 'center',
-    fontSize: 15,
+    fontSize: 15
   },
   btn: {
     backgroundColor: '#ff7200',
@@ -118,7 +118,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 40,
     lineHeight: 33,
-    fontSize: 18,
+    fontSize: 18
   },
   clear: {
     marginTop: 10,
@@ -131,6 +131,6 @@ const styles = StyleSheet.create({
     lineHeight: 33,
     height: 33,
     fontSize: 18,
-    textAlign: 'center',
+    textAlign: 'center'
   }
 });

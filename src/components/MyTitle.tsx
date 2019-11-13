@@ -69,6 +69,6 @@ export class MyTitle extends Component<HeaderProps> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
 });

@@ -60,8 +60,8 @@ export class AsyncStorageLearning extends Component<NavigationStackScreenProps> 
 
   render() {
     const list = [];
-    for (let i = 0; i < Model.length; i++){
-      if (i % 2 == 0){
+    for (let i = 0; i < Model.length; i++) {
+      if (i % 2 == 0) {
         const row = (
           <View style={styles.row} key={i}>
             <Item press={this.press.bind(this, Model[i])} url={Model[i].url} title={Model[i].title}/>
@@ -73,7 +73,7 @@ export class AsyncStorageLearning extends Component<NavigationStackScreenProps> 
     }
     const count = this.state.count;
     let str = null;
-    if(count){
+    if (count) {
       str = '，共'+ count + '件商品';
     }
 
@@ -115,11 +115,11 @@ class Item extends Component<ItemProps> {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 1
   },
   row: {
     flexDirection: 'row',
-    marginBottom: 10,
+    marginBottom: 10
   },
   item: {
     flex: 1,
@@ -127,7 +127,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#ddd',
     marginRight: 5,
-    height: 110,
+    height: 110
   },
   img: {
     width: '100%',
@@ -142,7 +142,7 @@ const styles = StyleSheet.create({
     height: 25,
     lineHeight: 25,
     textAlign: 'center',
-    marginTop: 84,
+    marginTop: 84
   },
   btn: {
     backgroundColor: '#ff7200',
@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
     marginRight: 10,
     marginTop: 40,
     lineHeight: 33,
-    fontSize: 18,
+    fontSize: 18
   }
 });
 

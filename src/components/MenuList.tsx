@@ -34,7 +34,7 @@ interface MenuListState {
 
 export class MenuList extends Component<MenuListProps, MenuListState> {
 
-  constructor(props: Readonly<MenuListProps>){
+  constructor(props: Readonly<MenuListProps>) {
     super(props);
     //左侧选择的index
     let nSelected = props.nSelected;
@@ -68,15 +68,15 @@ export class MenuList extends Component<MenuListProps, MenuListState> {
     );
   }
   // 渲染头部TabBar
-  renderHeader(){
+  renderHeader() {
     const data = this.props.data;
     const tabSelected = this.state.tabSelected;
     let header = [];
-    for (let i = 0; i < data.length; i ++){
+    for (let i = 0; i < data.length; i ++) {
       let tabStyle = null;
-      if(i == tabSelected){
+      if (i == tabSelected) {
         tabStyle = [styles.header_text, styles.active_blue];
-      }else{
+      } else {
         tabStyle = [styles.header_text];
       }
       header.push(
@@ -97,8 +97,8 @@ export class MenuList extends Component<MenuListProps, MenuListState> {
     const tabSelected = this.state.tabSelected;
     let leftPanel = [];
     for (let i = 0; i < data.length; i ++) {
-      if (i == tabSelected){
-        for(let k = 0; k < data[i].child.length; k ++){
+      if (i == tabSelected) {
+        for (let k = 0; k < data[i].child.length; k ++) {
           const style = (k == nSelected) ? styles.select_color : {};
           leftPanel.push(
             <Text onPress={this.leftPress.bind(this, i, k)}
@@ -121,11 +121,11 @@ export class MenuList extends Component<MenuListProps, MenuListState> {
     const tabSelected = this.state.tabSelected;
     const nSelected = this.state.nSelected;
     let rightPanel = [];
-    for(let i = 0; i < data.length; i ++){
-      if(tabSelected == i){
-        for(let k = 0; k < data[i].child.length; k ++){
-          if (k == nSelected){
-            for(let j = 0; j < data[i].child[k].content.length; j ++){
+    for (let i = 0; i < data.length; i ++) {
+      if (tabSelected == i) {
+        for (let k = 0; k < data[i].child.length; k ++) {
+          if (k == nSelected) {
+            for (let j = 0; j < data[i].child[k].content.length; j ++) {
               rightPanel.push(
                 <Text onPress={this.props.click.bind(this, data[i].child[k].content[j])}
                       key={data[i].child[k].content[j]}
@@ -143,7 +143,7 @@ export class MenuList extends Component<MenuListProps, MenuListState> {
   }
 
   //头部点击事件即Tab切换事件
-  headerPress(index: number){
+  headerPress(index: number) {
     this.setState({
       tabSelected: index,
       nSelected: 0
@@ -151,7 +151,7 @@ export class MenuList extends Component<MenuListProps, MenuListState> {
   }
 
   //点击左侧，展示右侧二级菜单
-  leftPress(tabIndex: number, nIndex: number){
+  leftPress(tabIndex: number, nIndex: number) {
     this.setState({
       tabSelected: tabIndex,
       nSelected: nIndex
@@ -189,7 +189,7 @@ const styles = StyleSheet.create({
   },
   left_panel: {
     backgroundColor: '#F2F2F2',
-    height: 205,
+    height: 205
   },
   select_color:{
     backgroundColor: '#fff'

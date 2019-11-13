@@ -9,8 +9,8 @@ import {
   View
 } from "react-native";
 
-class TouchableLearning extends Component{
-  show(text: string){
+class TouchableLearning extends Component {
+  show(text: string) {
     Alert.alert(text);
   }
   render() {

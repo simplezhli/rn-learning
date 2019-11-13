@@ -87,12 +87,12 @@ const styles = StyleSheet.create({
     height: 50,
     borderBottomWidth: 3/PixelRatio.get(),
     borderBottomColor: '#ef2d36',
-    alignItems: 'center',
+    alignItems: 'center'
   },
   font: {
     fontSize: 25,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'center'
   },
   font_1: {
     color: '#cd1d1c'
@@ -117,7 +117,7 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#cd1d1c',
     marginLeft: 10,
-    marginTop: 15,
+    marginTop: 15
   },
   news_item: {
     marginTop: 5,

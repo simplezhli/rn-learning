@@ -24,85 +24,85 @@ const mainNavigator = createStackNavigator(
     Main: {
       screen: MainPage,
       navigationOptions: {
-        title: 'RN Learning',
+        title: 'RN Learning'
       }
     },
     View: {
       screen: ViewLearning,
       navigationOptions: {
-        title: 'View',
+        title: 'View'
       }
     },
     Text: {
       screen: TextLearning,
       navigationOptions: {
-        title: 'Text',
+        title: 'Text'
       }
     },
     TextInput: {
       screen: TextInputLearning,
       navigationOptions: {
-        title: 'TextInput',
+        title: 'TextInput'
       }
     },
     Touchable: {
       screen: TouchableLearning,
       navigationOptions: {
-        title: 'Touchable',
+        title: 'Touchable'
       }
     },
     Image: {
       screen: ImageLearning,
       navigationOptions: {
-        title: 'Image',
+        title: 'Image'
       }
     },
     AsyncStorage: {
       screen: AsyncStorageLearning,
       navigationOptions: {
-        title: 'AsyncStorage',
+        title: 'AsyncStorage'
       }
     },
     CartPage: {
       screen: CartPage,
       navigationOptions: {
-        title: '购物车',
+        title: '购物车'
       }
     },
     MenuListDemo: {
       screen: MenuListDemo,
       navigationOptions: {
-        title: 'MenuListDemo',
+        title: 'MenuListDemo'
       }
     },
     CalendarDemo: {
       screen: CalendarDemo,
       navigationOptions: {
-        title: 'CalendarDemo',
+        title: 'CalendarDemo'
       }
     },
     SwiperDemo: {
       screen: SwiperDemo,
       navigationOptions: {
-        title: 'SwiperDemo',
+        title: 'SwiperDemo'
       }
     },
     ModalDemo: {
       screen: ModalDemo,
       navigationOptions: {
-        title: 'ModalDemo',
+        title: 'ModalDemo'
       }
     },
     AxiosDemo: {
       screen: AxiosDemo,
       navigationOptions: {
-        title: 'AxiosDemo',
+        title: 'AxiosDemo'
       }
     },
     ReduxLearning: {
       screen: ReduxLearning,
       navigationOptions: {
-        title: 'ReduxLearning',
+        title: 'ReduxLearning'
       }
     }
   },
@@ -116,7 +116,7 @@ const mainNavigator = createStackNavigator(
       },
       headerTintColor: colors.default,
       headerTitleStyle: {
-        fontWeight: 'bold',
+        fontWeight: 'bold'
       },
     }
   }
