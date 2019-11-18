@@ -8,7 +8,7 @@ import {client} from '../api/Axios';
 import Axios, {AxiosError, Canceler} from 'axios';
 import {Button, Container, Text} from 'native-base';
 
-interface User {
+export interface User {
   id: number;
   avatar_url: string;
   name: string;

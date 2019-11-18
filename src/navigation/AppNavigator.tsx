@@ -17,7 +17,7 @@ import {ModalDemo} from '../screens/ModalDemo';
 import {AxiosDemo} from '../screens/AxiosDemo';
 import {HeaderProps} from 'react-navigation-stack/src/types';
 import {MyTitle} from '../components/MyTitle';
-import {ReduxLearning} from '../screens/ReduxLearning';
+import ReduxLearning from '../screens/ReduxLearning';
 
 const mainNavigator = createStackNavigator(
   {
