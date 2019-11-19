@@ -18,6 +18,7 @@ import {AxiosDemo} from '../screens/AxiosDemo';
 import {HeaderProps} from 'react-navigation-stack/src/types';
 import {MyTitle} from '../components/MyTitle';
 import ReduxLearning from '../screens/ReduxLearning';
+import WebViewLearning from '../screens/WebViewLearning';
 
 const mainNavigator = createStackNavigator(
   {
@@ -69,40 +70,46 @@ const mainNavigator = createStackNavigator(
         title: '购物车'
       }
     },
-    MenuListDemo: {
+    MenuList: {
       screen: MenuListDemo,
       navigationOptions: {
         title: 'MenuListDemo'
       }
     },
-    CalendarDemo: {
+    Calendar: {
       screen: CalendarDemo,
       navigationOptions: {
         title: 'CalendarDemo'
       }
     },
-    SwiperDemo: {
+    Swiper: {
       screen: SwiperDemo,
       navigationOptions: {
         title: 'SwiperDemo'
       }
     },
-    ModalDemo: {
+    Modal: {
       screen: ModalDemo,
       navigationOptions: {
         title: 'ModalDemo'
       }
     },
-    AxiosDemo: {
+    Axios: {
       screen: AxiosDemo,
       navigationOptions: {
         title: 'AxiosDemo'
       }
     },
-    ReduxLearning: {
+    Redux: {
       screen: ReduxLearning,
       navigationOptions: {
         title: 'ReduxLearning'
+      }
+    },
+    WebView: {
+      screen: WebViewLearning,
+      navigationOptions: {
+        title: 'WebViewLearning'
       }
     }
   },

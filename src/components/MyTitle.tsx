@@ -3,7 +3,6 @@
  * @data:     2019-11-06 10:02
  ************************************************************************************************/
 import React, {Component} from 'react';
-import {StyleSheet} from 'react-native';
 import {HeaderProps} from 'react-navigation-stack/src/types';
 import {Scene} from 'react-navigation-stack/lib/typescript/types';
 import {colors} from '../styles/Colors';
@@ -13,7 +12,7 @@ export class MyTitle extends Component<HeaderProps> {
 
   render() {
 
-    const titleString = this.getHeaderTitleString(this.props.scene);
+    const titleString = MyTitle.getHeaderTitleString(this.props.scene);
 
     return (
       <Header
@@ -48,7 +47,7 @@ export class MyTitle extends Component<HeaderProps> {
     );
   };
 
-  private getHeaderTitleString(scene: Scene) {
+  private static getHeaderTitleString(scene: Scene) {
     const options = scene.descriptor.options;
     if (typeof options.headerTitle === 'string') {
       return options.headerTitle;
@@ -66,9 +65,3 @@ export class MyTitle extends Component<HeaderProps> {
   }
 
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-});
