@@ -19,6 +19,7 @@ import {HeaderProps} from 'react-navigation-stack/src/types';
 import {MyTitle} from '../components/MyTitle';
 import ReduxLearning from '../screens/ReduxLearning';
 import WebViewLearning from '../screens/WebViewLearning';
+import PanResponderLearning from '../screens/PanResponderLearning';
 
 const mainNavigator = createStackNavigator(
   {
@@ -110,6 +111,12 @@ const mainNavigator = createStackNavigator(
       screen: WebViewLearning,
       navigationOptions: {
         title: 'WebViewLearning'
+      }
+    },
+    PanResponder: {
+      screen: PanResponderLearning,
+      navigationOptions: {
+        title: 'PanResponderLearning'
       }
     }
   },
