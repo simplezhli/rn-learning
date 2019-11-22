@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 import {ActivityIndicator, LayoutChangeEvent, PixelRatio, StyleSheet, Text, View} from 'react-native';
 import {colors} from '../styles/Colors';
-import {ProgressBar} from 'native-base';
 
 class ViewLearning extends Component {
 

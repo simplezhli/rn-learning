@@ -17,7 +17,7 @@ export class MainPage extends Component<NavigationStackScreenProps> {
           keyExtractor={(item,index) => item + index}
           data={[
             'View', 'Text', 'TextInput', 'Touchable', 'Image', 'AsyncStorage', 'MenuList', 'Calendar',
-            'Swiper', 'Modal', 'Axios', 'Redux', 'WebView', 'PanResponder'
+            'Swiper', 'Modal', 'Axios', 'Redux', 'WebView', 'PanResponder', 'Pushy'
           ]}
           renderItem={({item}) =>
             <TouchableHighlight

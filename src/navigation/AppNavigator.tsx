@@ -20,6 +20,7 @@ import {MyTitle} from '../components/MyTitle';
 import ReduxLearning from '../screens/ReduxLearning';
 import WebViewLearning from '../screens/WebViewLearning';
 import PanResponderLearning from '../screens/PanResponderLearning';
+import {PushyDemo} from '../screens/PushyDemo';
 
 const mainNavigator = createStackNavigator(
   {
@@ -117,6 +118,12 @@ const mainNavigator = createStackNavigator(
       screen: PanResponderLearning,
       navigationOptions: {
         title: 'PanResponderLearning'
+      }
+    },
+    Pushy: {
+      screen: PushyDemo,
+      navigationOptions: {
+        title: 'PushyDemo'
       }
     }
   },

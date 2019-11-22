@@ -4,7 +4,7 @@ import {
   PanResponder,
   PanResponderGestureState,
   PanResponderInstance,
-  StyleSheet,
+  StyleSheet, Text,
   View,
 } from 'react-native';
 import {dimensions} from '../styles/Dimensions';
@@ -18,9 +18,9 @@ class PanResponderLearning extends Component {
   watcher: PanResponderInstance;
   startX: number;
 
-  constructor(props) {
+  constructor(props: Readonly<{}>) {
     super(props);
-    startX = 0;
+    this.startX = 0;
     this._onPanResponderGrant = this._onPanResponderGrant.bind(this);
     this._onPanResponderMove = this._onPanResponderMove.bind(this);
     this._onPanResponderEnd = this._onPanResponderEnd.bind(this);
@@ -39,7 +39,7 @@ class PanResponderLearning extends Component {
   _onPanResponderMove(e: GestureResponderEvent, gestureState: PanResponderGestureState) {
     const touchPointX = gestureState.moveX;
     let leftPoint;
-    if ( touchPointX< this.startX) {
+    if ( touchPointX < this.startX) {
       leftPoint = 1; // 滑块移至到尽头，不继续偏移
     } else {
       if (touchPointX > dimensions.width - 42 - 48 + this.startX) {
@@ -61,10 +61,11 @@ class PanResponderLearning extends Component {
 
   render() {
     return (
-      <View style={styles.flex}>
+      <View style={styles.container}>
         <View style={styles.barViewStyle}>
           <View style={[styles.buttonViewStyle, {left: this.state.leftPoint}]}  {...this.watcher.panHandlers}/>
         </View>
+        <Text style={{fontSize: 18, top: 70}}>拖动滑块</Text>
       </View>
     );
   }
@@ -73,17 +74,17 @@ class PanResponderLearning extends Component {
 export default PanResponderLearning;
 
 const styles = StyleSheet.create({
-  flex: {
-    flex: 1
+  container: {
+    flex: 1,
+    alignItems: 'center'
   },
   barViewStyle: {
     backgroundColor: 'gray',
     borderRadius: 25,
     width: dimensions.width - 40,
     height: 50,
-    left: 20,
     top: 50,
-    flexDirection: 'row'
+    flexDirection: 'column'
   },
   buttonViewStyle: {
     height: 48,
