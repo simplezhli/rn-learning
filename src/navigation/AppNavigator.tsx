@@ -21,6 +21,141 @@ import ReduxLearning from '../screens/ReduxLearning';
 import WebViewLearning from '../screens/WebViewLearning';
 import PanResponderLearning from '../screens/PanResponderLearning';
 import {PushyDemo} from '../screens/PushyDemo';
+import {Icon} from 'native-base';
+import {NavigatorDemo} from '../screens/NavigatorDemo';
+import {createBottomTabNavigator, createMaterialTopTabNavigator} from 'react-navigation-tabs';
+import {createDrawerNavigator} from 'react-navigation-drawer';
+
+const DrawerScreens = createDrawerNavigator(
+  {
+    TestPage1: {
+      screen: NavigatorDemo,
+      params: {'content': '点击打开抽屉'},
+      navigationOptions: {
+        drawerLabel: '苹果',
+        drawerIcon: ({tintColor}) => (
+          <Icon name="logo-apple" style={{color: tintColor}}/>
+        )
+      }
+    },
+    TestPage2: {
+      screen: NavigatorDemo,
+      params: {'content': '披萨'},
+      navigationOptions: {
+        drawerLabel: '披萨',
+        drawerIcon: ({tintColor}) => (
+          <Icon name="pizza" style={{color: tintColor}}/>
+        )
+      }
+    },
+    TestPage3: {
+      screen: NavigatorDemo,
+      params: {'content': '啤酒'},
+      navigationOptions: {
+        drawerLabel: '啤酒',
+        drawerIcon: ({tintColor}) => (
+          <Icon name="beer" style={{color: tintColor}}/>
+        )
+      }
+    },
+  },
+  {
+    initialRouteName: 'TestPage1',
+    contentOptions: {
+      activeTintColor: '#e91e63',
+      itemsContainerStyle: {
+        marginVertical: 0,
+      },
+      iconContainerStyle: {
+        opacity: 1
+      }
+    }
+  }
+);
+
+const TopTabScreens = createMaterialTopTabNavigator(
+  {
+    TestPage1: {
+      screen: NavigatorDemo,
+      navigationOptions: {
+        tabBarLabel: '苹果',
+      },
+      params: {'content': 'TestPage1'}
+    },
+    TestPage2: {
+      screen: NavigatorDemo,
+      navigationOptions: {
+        tabBarLabel: '披萨',
+      },
+      params: {'content': 'TestPage2'}
+    },
+    TestPage3: {
+      screen: NavigatorDemo,
+      navigationOptions: {
+        tabBarLabel: '啤酒',
+      },
+      params: {'content': 'TestPage3'}
+    }
+  },{
+    backBehavior: 'none',
+    swipeEnabled: true,
+    tabBarOptions: {
+      labelStyle: {
+        fontSize: 14,
+      },
+      tabStyle: {
+        width: 90,
+      },
+      activeTintColor: colors.primary,
+      inactiveTintColor: colors.dark,
+      style: {
+        backgroundColor: 'white',
+      },
+      indicatorStyle: {
+        backgroundColor: colors.primary,
+      }
+    }
+  }
+);
+
+const TabScreens = createBottomTabNavigator(
+  {
+    TestPage1: {
+      screen: TopTabScreens,
+      navigationOptions: {
+        tabBarLabel: '苹果',
+        tabBarIcon: ({ tintColor }: string) => <Icon name="logo-apple" style={{ color: tintColor }} />
+      },
+    },
+    TestPage2: {
+      screen: DrawerScreens,
+      navigationOptions: {
+        tabBarLabel: '披萨',
+        tabBarIcon: ({ tintColor }: string) => <Icon name="pizza" style={{ color: tintColor }}/>
+      },
+    },
+    TestPage3: {
+      screen: NavigatorDemo,
+      navigationOptions: {
+        tabBarLabel: '啤酒',
+        tabBarIcon: ({ tintColor }: string) => <Icon name="beer" style={{ color: tintColor }}/>
+      },
+      params: {'content': 'TestPage3'}
+    },
+  },
+  {
+    initialRouteName: 'TestPage1',
+    backBehavior: 'none',
+    tabBarOptions: {
+      activeTintColor: colors.primary,
+      inactiveTintColor: colors.dark,
+      labelStyle: {
+        fontSize: 12,
+      },
+      showLabel: true
+    },
+  }
+);
 
 const mainNavigator = createStackNavigator(
   {
@@ -124,6 +259,12 @@ const mainNavigator = createStackNavigator(
       screen: PushyDemo,
       navigationOptions: {
         title: 'PushyDemo'
+      }
+    },
+    Navigator: {
+      screen: TabScreens,
+      navigationOptions: {
+        title: 'NavigatorDemo'
       }
     }
   },

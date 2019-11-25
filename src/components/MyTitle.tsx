@@ -7,6 +7,7 @@ import {HeaderProps} from 'react-navigation-stack/src/types';
 import {Scene} from 'react-navigation-stack/lib/typescript/types';
 import {colors} from '../styles/Colors';
 import {Button, Header, Icon, Left, Right, Title, Body} from 'native-base';
+import {View} from 'react-native';
 
 export class MyTitle extends Component<HeaderProps> {
 
@@ -30,7 +31,9 @@ export class MyTitle extends Component<HeaderProps> {
 
   private renderLeftComponent = (props: HeaderProps) => {
     if (props.scene.index === 0) {
-      return;
+      return(
+        <View style={{width: 10}}/>
+      );
     }
     const goBack = () => {
       // Go back on next tick because button ripple effect needs to happen on Android
